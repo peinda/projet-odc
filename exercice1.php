@@ -100,7 +100,11 @@ session_start();
 
 					echo"</tr> <br/> ";
 				}
+				if (array_key_exists($i,$_SESSION['tab']['inferieur'])) {
+					# code...
+				
 				echo"<td>".$_SESSION['tab']['inferieur'][$i]."</td>";
+			}
 			}
 		}
 		echo"</tr> </table> <div class=pagination>";
@@ -163,9 +167,12 @@ session_start();
 					if (($i!=(($page-1)*$nombre_max_page)) && ($i%10==0)) {
 						# code...
 						echo"</tr> <br/> ";
-					}
+					}if (array_key_exists($i,$_SESSION['tab']['superieur'])) {
+						# code...
+					
 					echo"<td>".$_SESSION['tab']['superieur'][$i]."</td>";
 				}
+			}
 			}
 			echo"</tr> </table> <div class=pagination>";
 			$pagination="";
