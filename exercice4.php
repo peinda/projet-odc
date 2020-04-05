@@ -58,17 +58,19 @@
 if(isset($_POST['valider'])){
     
     {
-        $chaine=$_POST['phrase'];
-        #fonction pour valider une phrase qui est la F1.
-        if(phraseValide($chaine))
+        $chaine=$_POST['phras'];
+    //si la phrase est valide
+    if(phraseValide($chaine))
         {
-            #fonction pour decouper un texte qui est la f2.
-            $texte=decoupage($chaine);
+//F2 decoupage texte en phrase
+$texte=decoupage($chaine);
             for($i=0; $i<count($texte); $i++){
                 $texte1[]=eliminEspace($texte[$i]);
             }
             var_dump($texte1); 
-            #fonction pour supprimer des espaces qui est la f3. 
+            
+
+ //F3 Elimination d'espace
             $chaine=eliminEspace($chaine);
             echo "<label>Le texte corrigé </label><br/>";
             echo '<textarea readonly id="case1">'.$chaine.'</textarea><br/>'; 
@@ -77,12 +79,6 @@ if(isset($_POST['valider'])){
             echo "Remplissez lee champ SVP";
             exit;
         }
-    }   
+    }  
+}  
 ?>
-
-    
-   
-    
-}
-    ?>
-
